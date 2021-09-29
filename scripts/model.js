@@ -5,6 +5,7 @@ let model, webcam, labelContainer, maxPredictions;
 
 let result = {};
 
+const webcamDiv = document.getElementById("webcam-container");
 // Load the image model and setup the webcam
 async function init() {
   const modelURL = URL + "model.json";
@@ -19,7 +20,7 @@ async function init() {
 
   // Convenience function to setup a webcam
   const flip = true; // whether to flip the webcam
-  webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+  webcam = new tmImage.Webcam(webcamDiv.offsetWidth, webcamDiv.offsetHeight, flip); // width, height, flip
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   window.requestAnimationFrame(loop);

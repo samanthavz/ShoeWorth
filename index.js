@@ -9,6 +9,7 @@ app.use("/static", express.static(path.join(__dirname, "tm-my-image-model")));
 console.log(__dirname);
 
 app.use("/static", express.static(path.join(__dirname, "scripts")));
+app.use("/static", express.static(path.join(__dirname, "styles")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
