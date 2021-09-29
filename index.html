@@ -16,12 +16,25 @@
         <div class="border">
             <h1>ShoeWorth</h1>
             <p class="p1">Aim your camera at one of your shoes</p>
-            <div id="fake-webcam-container"></div>
-            <div id="webcam-container"></div>
-            <h3>Grant access to camera?</h3>
+            <div id="webcam-container">
+                <div id="camera-notice">
+                    <img src="static/camera.png" class="camera-notice-image" alt="image of a camera">
+                    <p id="camera-notice-1">Attention: to proceed 
+                        you have to give us 
+                        permission to use your
+                        camera in-app. 
+                     </p>
+                    <P id="camera-notice-2">
+                        This is how our AI system
+                        can recognize the shoes.
+                        No data will be saved
+                    </P>
+                </div>
+            </div>
+            <h3 id="h3">Grant access to camera?</h3>
             <div class="button-container">
-                <button type="button">No</button>
-                <button type="button" class="yes-button" onclick="init()">Yes</button>
+                <button type="button" id="button2"class="yes-button" onclick="init()">Yes</button>
+                <button type="button" id="button1">No</button>
             </div>
             <div id="label-container"></div>
         </div>

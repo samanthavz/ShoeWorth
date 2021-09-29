@@ -11,6 +11,14 @@ async function init() {
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
+  document.getElementById("button1").classList.add("invisible");
+  document.getElementById("button2").classList.add("invisible");
+  document.getElementById("camera-notice").classList.add("invisible");
+
+  const h3 = document.getElementById("h3")
+  h3.classList.add("h3-2");
+  h3.innerText = "Is this a...";
+
   // load the model and metadata
   // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
   // or files from your local hard drive
@@ -39,24 +47,24 @@ async function loop() {
   await predict();
   window.requestAnimationFrame(loop);
 
-    // if (result["Vans"] > 0.8) {
-    //   document.body.style.backgroundColor = "red";
-    // } else if (result["Nike"] > 0.8) {
-    //   document.body.style.backgroundColor = "blue";
-    // } else if (result["Adidas"] > 0.8) {
-    //   document.body.style.backgroundColor = "green";
-    // }
-}
-
 // run the webcam image through the image model
 async function predict() {
   // predict can take in an image, video or canvas html element
   const prediction = await model.predict(webcam.canvas);
 
-  result = {};
-  for (let i = 0; i < maxPredictions; i++) {
-    const classPrediction =
-      prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-    labelContainer.childNodes[i].innerHTML = classPrediction;
+   result = {};
+   for (let i = 0; i < maxPredictions; i++) {
+     result[prediction[i].className] = prediction[i].probability.toFixed(2);
+   }
+
+  if (result["Vans"] > 0.9) {
+      labelContainer.innerHTML = "Vans";
+    } else if (result["Nike"] > 0.9) {
+      labelContainer.innerHTML = "Nike";
+    } else if (result["Adidas"] > 0.9) {
+      labelContainer.innerHTML = "Adidas";
+    } else {
+      labelContainer.innerHTML = "Analyzing...";
+    }
   }
 }
