@@ -2,18 +2,20 @@ const loadingDiv = document.getElementById("loading-div");
 const loadingText = document.getElementById("loading-text");
 const infoPage = document.getElementById("infopage");
 
+// loadingsscreen
 window.onload = function () {
   setTimeout(() => {
     loadingText.innerHTML = "Calculating price prediction...";
     redirect();
-  }, 100);
+  }, 3000);
 };
 
+//switch to infopage
 function redirect () {
   setTimeout(() => {
     loadingDiv.classList.add("invisible");
     infoPage.classList.replace("invisible", "visible");
-  }, 100);
+  }, 4000);
 }
 
 const text = document.getElementById("info-text")
@@ -22,6 +24,7 @@ const deco = document.getElementById("deco");
 const arrow = document.getElementById("arrow");
 const arrow2 = document.getElementById("arrow2");
 
+// arrow up function
 function undo() {
   text.innerHTML =
     "This Jordan 1 consists of a white leather upper with Court Purple overlays and black detailing. A black Swoosh and Wings logo...";
@@ -32,6 +35,7 @@ function undo() {
   arrow.classList.replace("invisible", "flex");
 }
 
+//arrow down function
 function jump () {
   text.innerHTML = "This Jordan 1 consists of a white leather upper with Court Purple overlays and black detailing. A black Swoosh and Wings logo, white midsole, and Court Purple outsole completes the design. These sneakers released in April of 2020 and retailed for $170.";
   section2.classList.replace("invisible", "visible");
@@ -40,13 +44,3 @@ function jump () {
   arrow.classList.replace("flex", "invisible");
   arrow2.classList.replace("invisible", "flex");
 }
-
-// window.addEventListener("scroll", check());
-
-// function check() {
-//   console.log(window.scrollY);
-
-//   if (window.scrollY < 700) {
-//     undo();
-//   }
-// };

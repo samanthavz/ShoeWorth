@@ -19,6 +19,11 @@ app.set("view engine", "html");
 
 app.get("/", function (req, res) {
   console.log("hi");
+  res.render("index");
+});
+
+app.get("/views/home", function (req, res) {
+  console.log("hi");
   res.render("home");
 });
 
