@@ -61,12 +61,16 @@ async function predict() {
      result[prediction[i].className] = prediction[i].probability.toFixed(2);
    }
 
-  if (result["Vans"] > 0.9) {
-      labelContainer.innerHTML = "Vans";
-    } else if (result["Nike"] > 0.9) {
-      labelContainer.innerHTML = "Nike";
-    } else if (result["Adidas"] > 0.9) {
-      labelContainer.innerHTML = "Adidas";
+   let resVans = result["Vans"] * 100
+   let resNike = result["Nike"] * 100;
+   let resAdidas = result["Adidas"] * 100;
+
+  if (result["Vans"] > 0.85) {
+      labelContainer.innerHTML = "Vans " + resVans.toFixed(0) + "%";
+    } else if (result["Nike"] > 0.85) {
+      labelContainer.innerHTML = "Nike " + resNike.toFixed(0) + "%";
+    } else if (result["Adidas"] > 0.85) {
+      labelContainer.innerHTML = "Adidas " + resAdidas.toFixed(0) + "%";
     } else {
       labelContainer.innerHTML = "Analyzing...";
     }
