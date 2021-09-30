@@ -1,6 +1,6 @@
 
 // the link to your model provided by Teachable Machine export panel
-const URL = "static/";
+const URL = "/tm-my-image-model/";
 let model, webcam, labelContainer, maxPredictions;
 
 let result = {};
@@ -13,6 +13,7 @@ async function init() {
 
   document.getElementById("button1").classList.add("invisible");
   document.getElementById("button2").classList.add("invisible");
+
   document.getElementById("camera-notice").classList.add("invisible");
 
   const h3 = document.getElementById("h3")
@@ -40,6 +41,9 @@ async function init() {
     // and class labels
     labelContainer.appendChild(document.createElement("div"));
   }
+
+  document.getElementById("button3").classList.add("visible");
+  document.getElementById("button4").classList.add("visible");
 }
 
 async function loop() {

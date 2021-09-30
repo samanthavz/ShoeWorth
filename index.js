@@ -5,16 +5,28 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-app.use("/static", express.static(path.join(__dirname, "tm-my-image-model")));
-console.log(__dirname);
+app.use(express.static(__dirname + "/"));
+// app.use("/static", express.static(path.join(__dirname, "tm-my-image-model")));
 
-app.use("/static", express.static(path.join(__dirname, "scripts")));
-app.use("/static", express.static(path.join(__dirname, "styles")));
-app.use("/static", express.static(path.join(__dirname, "images")));
+// app.use("/static", express.static(path.join(__dirname, "scripts")));
+// app.use("/static", express.static(path.join(__dirname, "styles")));
+// app.use("/static", express.static(path.join(__dirname, "images")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/index.html"));
+app.set("views", path.join(__dirname, "views"));
+app.engine("html", require("ejs").renderFile);
+app.set("view engine", "html");
+
+
+app.get("/", function (req, res) {
+  console.log("hi");
+  res.render("home");
 });
+
+app.get("/views/infopage", function (req, res) {
+  console.log("yes");
+  res.render("infopage");
+});
+
 
 //connect
 app.listen(process.env.PORT || port, () => {

@@ -25,7 +25,7 @@ main {
 
 h1 {
   max-width: 100vw;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
   font-size: 2.2em;
 }
 
@@ -36,12 +36,13 @@ h3 {
 }
 
 .h3-2 {
+  margin: 1em 0 0 0;
   font-weight: 400;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 p {
-  font-size: 5vw;
+  font-size: 4.7vw;
 }
 
 .p1 {
@@ -56,11 +57,23 @@ p {
 
 
 body button {
-  font-size: 6vw;
-  padding: 0.3em 0;
-  width: 6em;
+  font-size: 5vw;
+  padding: 0.4em 0;
+  width: 7em;
   border-radius: 0.5em;
   border: none;
+}
+
+a {
+  text-align: center;
+  font-size: 5vw;
+  padding: 0.4em 0;
+  width: 7em;
+  border-radius: 0.5em;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
 }
 
 .yes-button {
@@ -72,14 +85,10 @@ body button {
   justify-content: space-between;
 }
 
-
-
 #webcam-container {
   background-color: black;
-  /* width: 100%; */
   height: 0;
   padding-bottom: 100%;
-  /* margin: 0 auto; */
   z-index: 1;
 }
 
@@ -97,9 +106,14 @@ body button {
   display: none;
 }
 
+.visible {
+  display: block;
+}
+
 #label-container {
-  font-size: 2em;
+  font-size: 1.7em;
   font-weight: 500;
+  margin-bottom: 0.4em;
 }
 
 .camera-notice-image {
