@@ -5,8 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShoeWorth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-  <h1>loading...</h1>
+  <main>
+    <div id="loading-div" class="loading-screen">
+      <img class="loading-image" src="/images/image 5.png" alt="image of a shoe loading">
+      <h3 id="loading-text" class="loading-text">Retrieving Shoe data...</h3>
+    </div>
+    <div id="infopage" class="invisible">
+      <div id="deco" class="decoration"></div>
+      <a href="/" class="back"><img src="/images/arrow 1.png" alt="backbutton"></a>
+      <img src="/images/image 4.png" id="section1" alt="picture of your shoe" class="shoe">
+      <div class="border border2 infopage-div">
+        <h1 class="infopage-h1">Nike Air Jordan </h1>
+        <div class="price">
+          <img src="/images/Vector.png" alt="stocks">
+          <h3>$999 - $1200</h3>
+        </div>
+        <p id="info-text">This Jordan 1 consists of a white leather upper with Court Purple overlays and black detailing. A black Swoosh and Wings logo...</p>
+        <div class="flex" id="arrow"><a href=#section2><img src="/images/Vector 2.png" alt="arrow down" onclick="jump()"></a></div>
+        <div class="invisible flip" id="arrow2"><a href=#section1><img src="/images/Vector 2.png" alt="arrow down" onclick="undo()"></a></div>
+
+        <div id="section2" class="invisible">
+          <div class="details"><h2>Product Details</h2></div>
+          <div class="row"><p>Style</p><p class="bold">5550588-500</p></div>
+          <div class="row"><p>Colorway</p><p class="bold">COURT PURPLE</p></div>
+          <div class="row"><p>Retail Price</p><p class="bold">$170</p></div>
+          <div class="row"><p>Release Date</p><p class="bold">04/11/2020</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src='/scripts/infopage.js'></script>
 </body>
 </html>

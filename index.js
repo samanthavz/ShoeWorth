@@ -23,7 +23,6 @@ app.get("/", function (req, res) {
 });
 
 app.get("/views/infopage", function (req, res) {
-  console.log("yes");
   res.render("infopage");
 });
 
